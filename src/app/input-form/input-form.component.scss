@@ -1,0 +1,17 @@
+div {
+  max-width: 350px;
+}
+
+button {
+  margin: auto;
+  max-width: 150px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 100%;
+}
