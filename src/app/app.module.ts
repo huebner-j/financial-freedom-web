@@ -11,12 +11,15 @@ import { MatInputModule } from '@angular/material/input';
 import {MatDividerModule} from "@angular/material/divider";
 import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
+import { CalculationResultComponent } from './calculation-result/calculation-result.component';
+import {MatTableModule} from "@angular/material/table";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputFormComponent
+    InputFormComponent,
+    CalculationResultComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatFormFieldModule,
     MatDividerModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
