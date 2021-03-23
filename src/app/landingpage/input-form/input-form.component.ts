@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {FinancialFreedomCalculatorService} from "../services/financial-freedom-calculator.service";
-import {StatusService} from "../services/status.service";
-import {CalculationResultService} from "../services/calculation-result.service";
+import {FinancialFreedomCalculatorService} from "../../services/financial-freedom-calculator.service";
+import {StatusService} from "../../services/status.service";
+import {CalculationResultService} from "../../services/calculation-result.service";
 
 export class InputData {
   seedCapital: string
@@ -47,12 +47,10 @@ export class InputFormComponent implements OnInit {
 
   calculate(value: InputData) {
     this.statusService.setState("SENDING");
-    //this.log.info("Trying to calculate: " + JSON.stringify(value));
     this.calculatorService.calculateFinancialFreedom(value).subscribe(
         (result) => {
           this.statusService.setState("SUCCESS");
           this.resultService.setResult(result);
-          console.log(JSON.stringify(result));
         }, () => this.statusService.setState("ERROR")
     )
   }
