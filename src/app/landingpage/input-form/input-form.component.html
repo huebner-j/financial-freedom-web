@@ -1,0 +1,22 @@
+<form [formGroup]="form" (submit)="calculate(form.value)" class="container-fixed" appBindQueryParamForm>
+  <div class="form-container">
+    <mat-form-field appearance="standard">
+      <mat-label>Startkapital</mat-label>
+      <input matInput formControlName="seedCapital" placeholder="10000€">
+    </mat-form-field>
+    <mat-form-field appearance="standard" >
+      <mat-label>monatliche Sparrate</mat-label>
+      <input matInput formControlName="monthlySavingRate" placeholder="500€">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>erwartete Rendite p.a.</mat-label>
+      <input matInput formControlName="interest" placeholder="10%">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>monatliches Wunscheinkommen</mat-label>
+      <input matInput formControlName="desiredMonthlyIncome" placeholder="3000€">
+    </mat-form-field>
+    <button *ngIf="form.valid" mat-raised-button type="submit" color="primary">berechnen</button>
+    <button *ngIf="!form.valid" disabled mat-raised-button type="submit" color="primary">berechnen</button>
+  </div>
+</form>

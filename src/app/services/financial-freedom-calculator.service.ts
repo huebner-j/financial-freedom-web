@@ -4,7 +4,7 @@ import {Observable, of} from 'rxjs';
 import {Config} from "../config/config";
 import {map, switchMap, tap} from "rxjs/operators";
 import {FinancialFreedomCalculation} from "./model/calculation-model";
-import {InputData} from "../input-form/input-form.component";
+import {InputData} from "../landingpage/input-form/input-form.component";
 
 @Injectable({providedIn: "root"})
 export class FinancialFreedomCalculatorService {

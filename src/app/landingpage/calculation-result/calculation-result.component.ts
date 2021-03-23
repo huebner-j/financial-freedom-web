@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FinancialFreedomCalculation} from "../services/model/calculation-model";
-import {StatusService} from "../services/status.service";
-import {filter, map, tap} from "rxjs/operators";
-import {CalculationResultService} from "../services/calculation-result.service";
-import {Observable} from "rxjs";
+import {StatusService} from "../../services/status.service";
+import {filter, map} from "rxjs/operators";
+import {CalculationResultService} from "../../services/calculation-result.service";
 
 export interface PeriodicElement {
   name: string;
@@ -24,7 +22,9 @@ export class CalculationResultComponent implements OnInit {
       map(result => result.calculation));
   displayedColumns: string[] = ['year', 'seedCapital', 'savedMoney', 'return', 'finalCapital'];
 
-  constructor(private statusService: StatusService, private resultService: CalculationResultService) {
+  constructor(
+      private statusService: StatusService,
+      private resultService: CalculationResultService) {
   }
 
   ngOnInit() {
